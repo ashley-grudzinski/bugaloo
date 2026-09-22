@@ -1,20 +1,31 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Recipe } from './components/Recipe';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+	return (
+		<ScrollView style={{
+			paddingTop: 75,
+			paddingHorizontal: 20
+			}}>
+			<View style={styles.containerWithin}>
+				<Recipe />
+			</View>
+		</ScrollView>
+	);
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+	wholePhone: {
+		flex: 1,
+		// backgroundColor: '#F8F7F4',
+		backgroundColor: 'green',
+		alignItems: 'center',
+		justifyContent: 'center',
+	},
+	containerWithin: {
+		height:  200,
+		alignItems: 'top',
+		justifyContent: 'top',
+	}
 });

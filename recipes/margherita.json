@@ -1,0 +1,73 @@
+{
+  "name": "Margherita Flatbread",
+  "url": "https://letthebakingbegin.com/15-minute-easy-margherita-flatbread-pizza/",
+  "imageFile": "margFlatbread.png",
+  "ingredients": {
+    "naan": {
+      "quantity": 1,
+      "unit": "unit",
+      "displayName": "naan bread"
+    },
+    "cheese": {
+      "quantitity": null,
+      "unit": null,
+      "displayName": "mozzarella cheese"
+    },
+    "tomato": {
+      "quantity": 1,
+      "unit": "unit",
+      "displayName": "tomato"
+    },
+    "basil": {
+      "quantity": null,
+      "unit": null,
+      "displayName": "basil"
+    },
+    "garlic": {
+      "quantitity": 3,
+      "unit": "cloves",
+      "displayName": "garlic"
+    },
+    "oliveOil": {
+      "quantitity": 1.5,
+      "unit": "Tbsp",
+      "displayName": "olive oil"
+    },
+    "balsamic": {
+      "quantitity": 1.5,
+      "unit": "Tbsp",
+      "displayName": "balsamic vinegar"
+    },
+    "saltAndPepper": {
+      "quantity": null,
+      "unit": "to taste",
+      "displayName": "salt & pepper"
+    }
+  },
+  "recipe": [
+    {
+      "description": "Press garlic cloves and mix with oil.",
+      "ingredients": [ "garlic", "oliveOil" ]
+    },
+    {
+      "description": "Brush the flatbread with oil & garlic with half the mixture. Place in preheated to 350°F oven for 5 minutes to crisp up.",
+      "ingredients": [ "naan", "oliveOil", "garlic" ]
+    },
+    {
+      "description": "Remove from oven and place slices of cheese on top of the flatbread, sprinkle with salt & pepper, then place thinly sliced tomatoes on top and repeat with a sprinkling of salt and pepper. Place back in the oven for another 5 minutes, plus an extra 2-3 minutes on broil. Watch the bread closely, if it's too dark before 2-3 minutes, remove it from the oven immediately.",
+      "ingredients": [ "cheese", "naan", "saltAndPepper", "tomato" ]
+    },
+    {
+      "description": "Meanwhile mix the remaining oil and garlic with the balsamic vinegar, stirring until a smooth emulsion forms.",
+      "ingredients": [ "oliveOil", "garlic", "balsamic" ]
+    },
+    {
+      "description": "Chop 5-6 basil leaves",
+      "ingredients": [ "basil" ]
+    },
+    {
+      "description": "Once flatbread pizza is baked and the edges are golden in color, remove from the oven, drizzle with however much of the balsamic vinegar mixture you would like, sprinkle with basil leaves, slice, and serve and enjoy!",
+      "ingredients": [ "naan", "balsamic", "basil" ]
+    }
+  ]
+}
