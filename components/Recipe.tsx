@@ -1,47 +1,36 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import marg from '../recipes/margherita.json';
 // import CheckBox from 'react-native-check-box'
-import { CheckBox } from './Checkbox';
+import { RecipeTable } from './RecipeTable'
+import { RecipeList } from './RecipeList';
 import {useState} from 'react';
-import uuid from 'react-native-uuid';
-
-type Ingredient = {
-	quantity: number,
-	unit: string,
-	displayName: string
-}
-
-const convertIngredients = (ingredients) => {
-	return Object.keys(ingredients).map(ingredientName => ingredients[ingredientName]);
-}
-
-const renderItem = (item: Ingredient) => {
-	const { quantity, displayName, unit } = item;
-	const displayQuantity = typeof quantity !== "number" ? "" : `${quantity} `;
-	return (
-		<View key={uuid.v4()} style={styles.ingredientListItem}>
-			<CheckBox style={{ marginRight: 7 }}/>
-			<Text>{`${displayQuantity}${displayName} ${unit ?? ""}`}</Text>
-		</View>
-	)
-};
 
 export const Recipe = () => {
+	const [showList, toggleListView] = useState(true);
 	const image = require("../images/margFlatbread.png");
 	const { name } = marg;
+	const ingredientsList = convertIngredients(marg.ingredients);
 
 	return (
 		<View>
 			<Text style={styles.title}>{name}</Text>
-			<View style={{ height: 220 }}>
+			<View>
 				<Image style={styles.image} source={image} />
-				<Text style={{fontSize: 22, marginBottom: 10}}>Ingredients</Text>
-				{
-					convertIngredients(marg.ingredients).map(item => renderItem(item))
-				}
+				<View style={styles.ingredientsTitle}>
+					<Text style={{fontSize: 22}}>Ingredients</Text>
+					<Pressable onPress={() => toggleListView(!showList)}>
+						<Text>Press me!</Text>
+					</Pressable>
+				</View>
+				{ showList && <RecipeList ingredients={ingredientsList}/> }
+				{ !showList && <RecipeTable ingredients={ingredientsList}/> }
 			</View>
 		</View>
 	)
+}
+
+const convertIngredients = (ingredients) => {
+	return Object.keys(ingredients).map(ingredientName => ingredients[ingredientName]);
 }
 
 const styles = StyleSheet.create({
@@ -61,8 +50,8 @@ const styles = StyleSheet.create({
 		borderRadius: 30,
 		marginBottom: 20
 	},
-	ingredientListItem: {
+	ingredientsTitle: {
 		flexDirection: 'row',
-		marginBottom: 5
+		marginBottom: 10
 	}
 });
