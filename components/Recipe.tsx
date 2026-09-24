@@ -1,9 +1,9 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import marg from '../recipes/margherita.json';
-// import CheckBox from 'react-native-check-box'
 import { RecipeTable } from './RecipeTable'
 import { RecipeList } from './RecipeList';
 import {useState} from 'react';
+import FONTS from '../fonts';
 
 export const Recipe = () => {
 	const [showList, toggleListView] = useState(true);
@@ -12,12 +12,12 @@ export const Recipe = () => {
 	const ingredientsList = convertIngredients(marg.ingredients);
 
 	return (
-		<View>
+		<View style={styles.container}>
 			<Text style={styles.title}>{name}</Text>
 			<View>
 				<Image style={styles.image} source={image} />
 				<View style={styles.ingredientsTitle}>
-					<Text style={{fontSize: 22}}>Ingredients</Text>
+					<Text style={{fontSize: 22, fontFamily: "Koulen-Regular"}}>Ingredients</Text>
 					<Pressable onPress={() => toggleListView(!showList)}>
 						<Text>Press me!</Text>
 					</Pressable>
@@ -35,23 +35,20 @@ const convertIngredients = (ingredients) => {
 
 const styles = StyleSheet.create({
 	container: {
-		backgroundColor: 'pink',
-		alignItems: 'center',
-		justifyContent: 'center',
+		margin: 6
 	},
 	title: {
 		fontSize: 36,
-		fontFamily: "PlaywriteCUGuides-Regular",
+		fontFamily: FONTS.KOULEN,
 		color: "#114B5F",
 	},
 	image: {
 		width: "100%",
 		height: 220,
 		borderRadius: 30,
-		marginBottom: 20
+		marginVertical: 20
 	},
 	ingredientsTitle: {
-		flexDirection: 'row',
-		marginBottom: 10
+		flexDirection: 'row'
 	}
 });

@@ -2,6 +2,7 @@ import { StyleSheet, View, Text } from 'react-native';
 import { CheckBox } from './Checkbox';
 import { Ingredient } from './types/Recipe';
 import uuid from 'react-native-uuid';
+import { FontText } from './FontText';
 
 const renderItem = (item: Ingredient) => {
 	const { quantity, displayName, unit } = item;
@@ -9,7 +10,7 @@ const renderItem = (item: Ingredient) => {
 	return (
 		<View key={uuid.v4()} style={styles.ingredientListItem}>
 			<CheckBox style={{ marginRight: 7 }}/>
-			<Text>{`${displayQuantity}${displayName} ${unit ?? ""}`}</Text>
+			<FontText>{`${displayQuantity}${displayName} ${unit ?? ""}`}</FontText>
 		</View>
 	)
 };
@@ -29,6 +30,7 @@ export const RecipeList = (props) => {
 const styles = StyleSheet.create({
 	ingredientListItem: {
 		flexDirection: 'row',
-		marginBottom: 5
+		marginBottom: 5,
+		marginLeft: 10
 	}
 });
