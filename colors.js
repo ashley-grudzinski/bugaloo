@@ -1,0 +1,7 @@
+const COLORS = {
+	BACKGROUND_BEIGE: "#F8F7F4",
+	DARK_BLUE: "#114B5F",
+	BLUE: "#7B9BA6"
+}
+
+export default COLORS;

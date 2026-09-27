@@ -1,7 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import { Recipe } from './components/Recipe';
 import { useFonts } from 'expo-font';
+import COLORS from "./colors";
 
 export default function App() {
 	useFonts({
@@ -12,7 +12,8 @@ export default function App() {
 	return (
 		<ScrollView style={{
 			paddingTop: 75,
-			paddingHorizontal: 20
+			paddingHorizontal: 20,
+			backgroundColor: COLORS.BACKGROUND_BEIGE
 			}}>
 			<View style={styles.containerWithin}>
 				<Recipe />
@@ -24,8 +25,7 @@ export default function App() {
 const styles = StyleSheet.create({
 	wholePhone: {
 		flex: 1,
-		// backgroundColor: '#F8F7F4',
-		backgroundColor: 'green',
+		backgroundColor: 'pink',
 		alignItems: 'center',
 		justifyContent: 'center',
 	},

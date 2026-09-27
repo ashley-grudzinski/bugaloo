@@ -3,6 +3,7 @@ import { CheckBox } from './Checkbox';
 import { Ingredient } from './types/Recipe';
 import uuid from 'react-native-uuid';
 import { FontText } from './FontText';
+import COLORS from '../colors';
 
 const renderItem = (item: Ingredient) => {
 	const { quantity, displayName, unit } = item;
@@ -10,7 +11,7 @@ const renderItem = (item: Ingredient) => {
 	return (
 		<View key={uuid.v4()} style={styles.ingredientListItem}>
 			<CheckBox style={{ marginRight: 7 }}/>
-			<FontText>{`${displayQuantity}${displayName} ${unit ?? ""}`}</FontText>
+			<FontText style={{ color: COLORS.BLUE }}>{`${displayQuantity}${displayName} ${unit ?? ""}`}</FontText>
 		</View>
 	)
 };

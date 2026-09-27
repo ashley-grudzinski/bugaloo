@@ -4,6 +4,7 @@ import { RecipeTable } from './RecipeTable'
 import { RecipeList } from './RecipeList';
 import {useState} from 'react';
 import FONTS from '../fonts';
+import COLORS from '../colors';
 
 export const Recipe = () => {
 	const [showList, toggleListView] = useState(true);
@@ -16,8 +17,8 @@ export const Recipe = () => {
 			<Text style={styles.title}>{name}</Text>
 			<View>
 				<Image style={styles.image} source={image} />
-				<View style={styles.ingredientsTitle}>
-					<Text style={{fontSize: 22, fontFamily: "Koulen-Regular"}}>Ingredients</Text>
+				<View style={styles.ingredientsTitleContainer}>
+					<Text style={styles.ingredientsTitle}>Ingredients</Text>
 					<Pressable onPress={() => toggleListView(!showList)}>
 						<Text>Press me!</Text>
 					</Pressable>
@@ -40,15 +41,20 @@ const styles = StyleSheet.create({
 	title: {
 		fontSize: 36,
 		fontFamily: FONTS.KOULEN,
-		color: "#114B5F",
+		color: COLORS.DARK_BLUE,
 	},
 	image: {
 		width: "100%",
 		height: 220,
 		borderRadius: 30,
-		marginVertical: 20
+		marginBottom: 20
+	},
+	ingredientsTitleContainer: {
+		flexDirection: 'row'
 	},
 	ingredientsTitle: {
-		flexDirection: 'row'
+		fontSize: 22,
+		fontFamily: FONTS.LAZLEZAR,
+		color: COLORS.DARK_BLUE
 	}
 });
