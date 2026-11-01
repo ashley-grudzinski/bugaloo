@@ -6,7 +6,8 @@ import COLORS from "./colors";
 export default function App() {
 	useFonts({
 		'Koulen-Regular': require('./assets/fonts/Koulen-Regular.ttf'),
-		'Lalezar-Regular': require('./assets/fonts/Lalezar-Regular.ttf')
+		'Lalezar-Regular': require('./assets/fonts/Lalezar-Regular.ttf'),
+		'Raleway': require('./assets/fonts/Raleway-VariableFont_wght.ttf')
   });
 
 	return (
@@ -30,8 +31,8 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 	},
 	containerWithin: {
-		height:  200,
 		alignItems: 'top',
 		justifyContent: 'top',
+		marginBottom: 40
 	}
 });

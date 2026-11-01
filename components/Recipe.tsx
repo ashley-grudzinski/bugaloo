@@ -1,4 +1,4 @@
-import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import marg from '../recipes/margherita.json';
 import { RecipeTable } from './RecipeTable'
 import { RecipeList } from './RecipeList';
@@ -9,7 +9,7 @@ import COLORS from '../colors';
 export const Recipe = () => {
 	const [showList, toggleListView] = useState(true);
 	const image = require("../images/margFlatbread.png");
-	const { name } = marg;
+	const { name, recipe } = marg;
 	const ingredientsList = convertIngredients(marg.ingredients);
 
 	return (
@@ -25,6 +25,13 @@ export const Recipe = () => {
 				</View>
 				{ showList && <RecipeList ingredients={ingredientsList}/> }
 				{ !showList && <RecipeTable ingredients={ingredientsList}/> }
+				<Text style={{...styles.ingredientsTitle, marginTop: 10}}>Recipe</Text>
+				{recipe.map((item, index) => (
+					<View style={{flexDirection: "row"}}>
+						<Text style={styles.stepNumbers}>{index + 1}</Text>
+						<Text style={styles.description}>{item.description}</Text>
+					</View>
+				))}
 			</View>
 		</View>
 	)
@@ -56,5 +63,20 @@ const styles = StyleSheet.create({
 		fontSize: 22,
 		fontFamily: FONTS.LAZLEZAR,
 		color: COLORS.DARK_BLUE
+	},
+	stepNumbers: {
+		marginStart: 10,
+		paddingEnd: 8,
+		fontSize: 17,
+		fontFamily: FONTS.LAZLEZAR,
+		color: COLORS.BLUE
+	},
+	description: {
+		marginEnd: 20,
+		marginBottom: 10,
+		paddingTop: 2,
+		fontFamily: FONTS.RALEWAY,
+		color: COLORS.TEXT_BEIGE,
+		fontWeight: "bold"
 	}
 });

@@ -1,7 +1,8 @@
 const COLORS = {
 	BACKGROUND_BEIGE: "#F8F7F4",
 	DARK_BLUE: "#114B5F",
-	BLUE: "#7B9BA6"
+	BLUE: "#7B9BA6",
+	TEXT_BEIGE: "#706f6b"
 }
 
 export default COLORS;
