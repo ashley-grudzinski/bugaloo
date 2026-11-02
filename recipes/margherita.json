@@ -5,7 +5,7 @@
   "ingredients": {
     "naan": {
       "quantity": 1,
-      "unit": "unit",
+      "unit": null,
       "displayName": "naan bread"
     },
     "cheese": {
@@ -15,7 +15,7 @@
     },
     "tomato": {
       "quantity": 1,
-      "unit": "unit",
+      "unit": null,
       "displayName": "tomato"
     },
     "basil": {

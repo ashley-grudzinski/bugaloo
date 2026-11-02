@@ -1,0 +1,78 @@
+{
+  "name": "Chicken Teriyaki",
+  "url": "https://tiffycooks.com/the-best-chicken-teriyaki-in-20-minutes/",
+  "ingredients": {
+    "chicken": {
+      "quantity": 2,
+      "unit": "unit",
+      "displayName": "bonless chicken thighs"
+    },
+    "salt": {
+      "quantitity": 1,
+      "unit": "tsp",
+      "displayName": "salt"
+    },
+		"blackPepper": {
+			"quantitity": 1,
+      "unit": "tsp",
+      "displayName": "black pepper"
+		},
+		"soySauce": {
+			"quantitity": 3,
+      "unit": "Tbsp",
+      "displayName": "soy sauce"
+		},
+		"mirin": {
+			"quantitity": 2,
+      "unit": "Tbsp",
+      "displayName": "mirin"
+		},
+		"brownSugar": {
+			"quantitity": 1,
+      "unit": "Tbsp",
+      "displayName": "brown sugar"
+		},
+		"honey": {
+			"quantitity": 1,
+      "unit": "Tbsp",
+      "displayName": "honey"
+		},
+		"sake": {
+			"quantitity": 2,
+      "unit": "Tbsp",
+      "displayName": "sake"
+		},
+		"ginger": {
+			"quantitity": 1,
+      "unit": "Tbsp",
+      "displayName": "grated ginger"
+		},
+		"garlic": {
+			"quantitity": 2,
+      "unit": "cloves",
+      "displayName": "grated garlic"
+		}
+  },
+  "recipe": [
+    {
+      "description": "Salt and Pepper both side of the chicken thigh.",
+      "ingredients": [ "salt", "blackPepper", "chicken" ]
+    },
+    {
+      "description": "In a pan, turn the heat up to medium-high and add in oil. Once the oil is hot, add in chicken skin side facing down and panfry for 4 minutes on each side.",
+      "ingredients": [ "chicken" ]
+    },
+    {
+      "description": "Once the chicken is golden brown on both sides, remove and set aside.",
+      "ingredients": [ "chicken" ]
+    },
+    {
+      "description": "Pour in the teriyaki sauce mixture and let it simmer for 30 seconds – 1 minute. Add back in the chicken and let the chicken cook in the sauce for 4-6 minutes. Keep pouring the sauce over the chicken and keep an eye out to prevent it from burning.",
+      "ingredients": [ ]
+    },
+    {
+      "description": "Garnish with green onion and sesame seeds, and ENJOY!",
+      "ingredients": [ ]
+    }
+  ]
+}

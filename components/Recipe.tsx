@@ -1,16 +1,17 @@
-import { FlatList, Image, Pressable, StyleSheet, Text, View } from 'react-native';
-import marg from '../recipes/margherita.json';
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { RecipeTable } from './RecipeTable'
 import { RecipeList } from './RecipeList';
+// import { RecipeProps } from './types/Recipe';
 import {useState} from 'react';
 import FONTS from '../fonts';
 import COLORS from '../colors';
 
-export const Recipe = () => {
+export const Recipe = (props) => {
+	const { marg: recipeObj, image } = props.props;
+
 	const [showList, toggleListView] = useState(true);
-	const image = require("../images/margFlatbread.png");
-	const { name, recipe } = marg;
-	const ingredientsList = convertIngredients(marg.ingredients);
+	const { name, recipe } = recipeObj;
+	const ingredientsList = convertIngredients(recipeObj.ingredients);
 
 	return (
 		<View style={styles.container}>
@@ -27,7 +28,10 @@ export const Recipe = () => {
 				{ !showList && <RecipeTable ingredients={ingredientsList}/> }
 				<Text style={{...styles.ingredientsTitle, marginTop: 10}}>Recipe</Text>
 				{recipe.map((item, index) => (
-					<View style={{flexDirection: "row"}}>
+					<View
+						style={{flexDirection: "row"}}
+						key={item.description}
+					>
 						<Text style={styles.stepNumbers}>{index + 1}</Text>
 						<Text style={styles.description}>{item.description}</Text>
 					</View>
