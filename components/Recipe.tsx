@@ -1,4 +1,4 @@
-import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { RecipeTable } from './RecipeTable'
 import { RecipeList } from './RecipeList';
 // import { RecipeProps } from './types/Recipe';
@@ -6,38 +6,44 @@ import {useState} from 'react';
 import FONTS from '../fonts';
 import COLORS from '../colors';
 
-export const Recipe = (props) => {
-	const { marg: recipeObj, image } = props.props;
+export const Recipe = ({ route }) => {
+	const { recipeObj, image } = route.params;
 
 	const [showList, toggleListView] = useState(true);
 	const { name, recipe } = recipeObj;
 	const ingredientsList = convertIngredients(recipeObj.ingredients);
 
 	return (
-		<View style={styles.container}>
-			<Text style={styles.title}>{name}</Text>
-			<View>
-				<Image style={styles.image} source={image} />
-				<View style={styles.ingredientsTitleContainer}>
-					<Text style={styles.ingredientsTitle}>Ingredients</Text>
-					<Pressable onPress={() => toggleListView(!showList)}>
-						<Text>Press me!</Text>
-					</Pressable>
-				</View>
-				{ showList && <RecipeList ingredients={ingredientsList}/> }
-				{ !showList && <RecipeTable ingredients={ingredientsList}/> }
-				<Text style={{...styles.ingredientsTitle, marginTop: 10}}>Recipe</Text>
-				{recipe.map((item, index) => (
-					<View
-						style={{flexDirection: "row"}}
-						key={item.description}
-					>
-						<Text style={styles.stepNumbers}>{index + 1}</Text>
-						<Text style={styles.description}>{item.description}</Text>
+		<ScrollView style={{
+			paddingTop: 75,
+			paddingHorizontal: 20,
+			backgroundColor: COLORS.BACKGROUND_BEIGE
+		}}>
+			<View style={styles.container}>
+				<Text style={styles.title}>{name}</Text>
+				<View>
+					<Image style={styles.image} source={image} />
+					<View style={styles.ingredientsTitleContainer}>
+						<Text style={styles.ingredientsTitle}>Ingredients</Text>
+						<Pressable onPress={() => toggleListView(!showList)}>
+							<Text>Press me!</Text>
+						</Pressable>
 					</View>
-				))}
+					{ showList && <RecipeList ingredients={ingredientsList}/> }
+					{ !showList && <RecipeTable ingredients={ingredientsList}/> }
+					<Text style={{...styles.ingredientsTitle, marginTop: 10}}>Recipe</Text>
+					{recipe.map((item, index) => (
+						<View
+							style={{flexDirection: "row"}}
+							key={item.description}
+						>
+							<Text style={styles.stepNumbers}>{index + 1}</Text>
+							<Text style={styles.description}>{item.description}</Text>
+						</View>
+					))}
+				</View>
 			</View>
-		</View>
+		</ScrollView>
 	)
 }
 
