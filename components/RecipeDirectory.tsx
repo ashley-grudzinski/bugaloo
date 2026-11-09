@@ -1,12 +1,13 @@
+import {useNavigation} from '@react-navigation/native';
 import { ScrollView, Image, Pressable, StyleSheet, Text, View } from 'react-native';
-import marg from '../recipes/margherita.json';
-import teriyaki from '../recipes/chicken_teriyaki.json';
+
 import FONTS from '../fonts';
 import COLORS from '../colors';
-import {useNavigation} from '@react-navigation/native';
+
+import marg from '../recipes/margherita.json';
+import teriyaki from '../recipes/chicken_teriyaki.json';
+
 const image = require("../images/margFlatbread.png");
-
-
 // import * as FileSystem from 'expo-file-system';
 
 

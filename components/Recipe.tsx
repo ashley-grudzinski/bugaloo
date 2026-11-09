@@ -1,10 +1,11 @@
 import { ScrollView, Image, Pressable, StyleSheet, Text, View } from 'react-native';
-import { RecipeTable } from './RecipeTable'
-import { RecipeList } from './RecipeList';
-// import { RecipeProps } from './types/Recipe';
 import {useState} from 'react';
+
 import FONTS from '../fonts';
 import COLORS from '../colors';
+
+import { RecipeTable } from './RecipeTable'
+import { RecipeList } from './RecipeList';
 
 export const Recipe = ({ route }) => {
 	const { recipeObj, image } = route.params;
