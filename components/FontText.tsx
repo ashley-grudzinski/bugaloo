@@ -1,5 +1,5 @@
 import { Text } from 'react-native';
-import FONTS from '../fonts';
+import { FONTS } from '../constants';
 
 export const FontText = (props) => {
 	const style = { ...props.style, fontFamily: FONTS.LAZLEZAR };

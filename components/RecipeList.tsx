@@ -3,7 +3,7 @@ import { CheckBox } from './Checkbox';
 import { Ingredient } from './types/Recipe';
 import uuid from 'react-native-uuid';
 import { FontText } from './FontText';
-import COLORS from '../colors';
+import { COLORS } from '../constants';
 
 const renderItem = (item: Ingredient) => {
 	const { quantity, displayName, unit } = item;

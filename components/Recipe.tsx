@@ -2,8 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 import { ScrollView, Image, Pressable, StyleSheet, Text, View } from 'react-native';
 
-import FONTS from '../fonts';
-import COLORS from '../colors';
+import { COLORS, FONTS, PAGE_STYLE } from '../constants';
 
 import { RecipeTable } from './RecipeTable'
 import { RecipeList } from './RecipeList';
@@ -19,11 +18,7 @@ export const Recipe = ({ route }) => {
 	const backButtonImage = require("../images/backArrow.png");
 
 	return (
-		<ScrollView style={{
-			paddingTop: 75,
-			paddingHorizontal: 20,
-			backgroundColor: COLORS.BACKGROUND_BEIGE
-		}}>
+		<ScrollView style={PAGE_STYLE}>
 			<Pressable
 				style={styles.backButtonArea}
 				onPress={() => navigation.goBack()}

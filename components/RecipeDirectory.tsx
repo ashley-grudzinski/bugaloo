@@ -1,8 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import { ScrollView, Image, Pressable, StyleSheet, Text, View } from 'react-native';
 
-import FONTS from '../fonts';
-import COLORS from '../colors';
+import { COLORS, FONTS, PAGE_STYLE } from '../constants';
 
 import marg from '../recipes/margherita.json';
 import teriyaki from '../recipes/chicken_teriyaki.json';
@@ -30,11 +29,7 @@ export const RecipeDirectory = () => {
 	];
 
 	return (
-		<ScrollView style={{
-			paddingTop: 75,
-			paddingHorizontal: 20,
-			backgroundColor: COLORS.BACKGROUND_BEIGE
-		}}>
+		<ScrollView style={PAGE_STYLE}>
 			<View style={styles.container}>
 				{items.map((item) => (
 					<Pressable
