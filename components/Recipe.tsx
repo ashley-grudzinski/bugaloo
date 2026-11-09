@@ -1,5 +1,6 @@
+import { useNavigation } from '@react-navigation/native';
+import { useState } from 'react';
 import { ScrollView, Image, Pressable, StyleSheet, Text, View } from 'react-native';
-import {useState} from 'react';
 
 import FONTS from '../fonts';
 import COLORS from '../colors';
@@ -8,11 +9,14 @@ import { RecipeTable } from './RecipeTable'
 import { RecipeList } from './RecipeList';
 
 export const Recipe = ({ route }) => {
+	const navigation = useNavigation<any>();
 	const { recipeObj, image } = route.params;
 
 	const [showList, toggleListView] = useState(true);
 	const { name, recipe } = recipeObj;
 	const ingredientsList = convertIngredients(recipeObj.ingredients);
+
+	const backButtonImage = require("../images/backArrow.png");
 
 	return (
 		<ScrollView style={{
@@ -20,6 +24,12 @@ export const Recipe = ({ route }) => {
 			paddingHorizontal: 20,
 			backgroundColor: COLORS.BACKGROUND_BEIGE
 		}}>
+			<Pressable
+				style={styles.backButtonArea}
+				onPress={() => navigation.goBack()}
+			>
+				<Image style={styles.backButton} source={backButtonImage}></Image>
+			</Pressable>
 			<View style={styles.container}>
 				<Text style={styles.title}>{name}</Text>
 				<View>
@@ -55,6 +65,16 @@ const convertIngredients = (ingredients) => {
 const styles = StyleSheet.create({
 	container: {
 		margin: 6
+	},
+	backButtonArea: {
+		width: 58.5,
+		justifyContent: "center",
+		backgroundColor: "#EDEAE0",
+		borderRadius: 8
+	},
+	backButton: {
+		width: 30,
+		height: 30
 	},
 	title: {
 		fontSize: 36,

@@ -1,4 +1,4 @@
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import { ScrollView, Image, Pressable, StyleSheet, Text, View } from 'react-native';
 
 import FONTS from '../fonts';
@@ -7,7 +7,6 @@ import COLORS from '../colors';
 import marg from '../recipes/margherita.json';
 import teriyaki from '../recipes/chicken_teriyaki.json';
 
-const image = require("../images/margFlatbread.png");
 // import * as FileSystem from 'expo-file-system';
 
 
@@ -21,11 +20,11 @@ export const RecipeDirectory = () => {
 
 	const items = [
 		{
-			name: marg.name,
+			recipe: marg,
 			image: images[marg.nickname]
 		},
 		{
-			name: teriyaki.name,
+			recipe: teriyaki,
 			image: images[teriyaki.nickname]
 		}
 	];
@@ -41,12 +40,12 @@ export const RecipeDirectory = () => {
 					<Pressable
 						style={styles.recipeGroup}
 						onPress={() =>
-							navigation.navigate('Recipe', {recipeObj: marg, image})
+							navigation.navigate('Recipe', {recipeObj: item.recipe, image: item.image})
 						}
-						key={item.name}
+						key={item.recipe.name}
 					>
 						<Image style={styles.image} source={item.image} />
-						<Text style={styles.recipeText}>{item.name}</Text>
+						<Text style={styles.recipeText}>{item.recipe.name}</Text>
 					</Pressable>
 				))}
 			</View>
